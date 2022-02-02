@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int maxProfit(vector<int>& prices) {
+    int maxProfit(vector<int>& prices) {         // if we keeping track of buy sell index as well
         int sz = prices.size();
         int maxprofit = 0;
         int maxprofitsellidx = -1;
@@ -33,3 +33,35 @@ public:
     // first, second -> first is big > second : buy second
     // firs, second -> first is small - buy first profit second - first => min possible profit
 };
+
+
+
+// class Solution {
+// public:
+//     int maxProfit(vector<int>& prices) {            // Time Complexity: O(n)   -- if only looking for max profit not index
+//         int profit=0;
+        
+//         int fmin=prices[0];
+//         int fmax=prices[0];
+//         int sz = prices.size();
+        
+//         for(int i=1;i<sz;i++){
+            
+//             if(fmin>prices[i]){
+//                 fmin = prices[i];
+//                 fmax = 0;
+//             }
+//             else if (fmax<prices[i]){
+//                 fmax = prices[i];
+//             }
+            
+//             int x = fmax - fmin;
+            
+//             if(x>profit)
+//                 profit = x;
+            
+//         }
+        
+//         return profit;
+//     }
+// };
